@@ -45,5 +45,6 @@ open class DotPlot : Plot {
 @objc public enum ScrollableGraphViewDataPointType : Int {
     case circle
     case square
+    case strokeCircle
     case custom
 }

@@ -17,7 +17,14 @@ internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
         
         super.init(viewportWidth: frame.size.width, viewportHeight: frame.size.height)
         
-        self.fillColor = fillColor.cgColor
+        switch dataPointType {
+        case .strokeCircle:
+            self.strokeColor = fillColor.cgColor
+            self.fillColor = UIColor.white.cgColor
+            self.lineWidth = dataPointSize / 3
+        default:
+            self.fillColor = fillColor.cgColor
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
