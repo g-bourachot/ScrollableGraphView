@@ -8,11 +8,13 @@
 import UIKit
 import Foundation
 
-struct PointLabelsDrawingSettings {
-    var labelColor: UIColor = .black
-    var labelFont: UIFont = .boldSystemFont(ofSize: 20)
-    var labelYOffset: CGFloat = 0
-    var labelXOffset: CGFloat = 0
+public struct PointLabelsDrawingSettings {
+    public var labelColor: UIColor = .black
+    public var labelFont: UIFont = .boldSystemFont(ofSize: 20)
+    public var labelYOffset: CGFloat = 0
+    public var labelXOffset: CGFloat = 0
+    
+    public init() {}
 }
 
 internal class PointLabelsDrawingView : UIView {

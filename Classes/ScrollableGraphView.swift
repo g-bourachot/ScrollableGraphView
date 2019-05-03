@@ -60,7 +60,7 @@ import UIKit
     /// Whether or not the graph should animate to their positions when the graph is first displayed.
     @IBInspectable open var shouldAnimateOnStartup: Bool = true
     
-    var pointValueLabelSettings : PointLabelsDrawingSettings? = nil
+    open var pointValueLabelSettings : PointLabelsDrawingSettings? = nil
     
     // Reference Line Settings
     // #######################
