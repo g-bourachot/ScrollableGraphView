@@ -58,13 +58,6 @@ internal class ReferenceLineDrawingView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createLabel(at position: CGPoint, withText text: String) -> UILabel {
-        let frame = CGRect(x: position.x, y: position.y, width: 0, height: 0)
-        let label = UILabel(frame: frame)
-        
-        return label
-    }
-    
     private func createReferenceLinesPath() -> UIBezierPath {
         
         referenceLinePath.removeAllPoints()

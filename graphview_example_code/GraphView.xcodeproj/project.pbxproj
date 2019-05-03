@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276D0068227C416600FB6140 /* PointLabelsDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D0067227C416600FB6140 /* PointLabelsDrawingView.swift */; };
 		291839A21C72E6A400753A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291839A11C72E6A400753A45 /* AppDelegate.swift */; };
 		291839A41C72E6A400753A45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291839A31C72E6A400753A45 /* ViewController.swift */; };
 		291839A71C72E6A400753A45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291839A51C72E6A400753A45 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		276D0067227C416600FB6140 /* PointLabelsDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLabelsDrawingView.swift; sourceTree = "<group>"; };
 		2918399E1C72E6A400753A45 /* GraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291839A11C72E6A400753A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		291839A31C72E6A400753A45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = GraphView/ViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				29A590411F050397004D219C /* GradientDrawingLayer.swift */,
 				29A590431F0503AC004D219C /* FillDrawingLayer.swift */,
 				29A590451F0503BD004D219C /* ReferenceLineDrawingView.swift */,
+				276D0067227C416600FB6140 /* PointLabelsDrawingView.swift */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				TargetAttributes = {
 					2918399D1C72E6A400753A45 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 23A5AVAGZ8;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -219,6 +223,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -261,6 +266,7 @@
 				29A590441F0503AC004D219C /* FillDrawingLayer.swift in Sources */,
 				29A2477E1F09ED4E00F75511 /* ReferenceLines.swift in Sources */,
 				299482F71F06931F007BCDCA /* GraphPointAnimation.swift in Sources */,
+				276D0068227C416600FB6140 /* PointLabelsDrawingView.swift in Sources */,
 				299482EB1F060CBE007BCDCA /* LinePlot.swift in Sources */,
 				299482F91F069337007BCDCA /* GraphPoint.swift in Sources */,
 				299482EF1F060CEA007BCDCA /* BarPlot.swift in Sources */,
@@ -388,12 +394,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23A5AVAGZ8;
 				INFOPLIST_FILE = GraphView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GraphView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -403,12 +410,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23A5AVAGZ8;
 				INFOPLIST_FILE = GraphView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GraphView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
