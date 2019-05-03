@@ -177,6 +177,7 @@ class ViewController: UIViewController, ScrollableGraphViewDataSource {
         graphView.shouldRangeAlwaysStartAtZero = true
         
         // Add everything to the graph.
+        graphView.pointValueLabelSettings = PointLabelsDrawingSettings.init(labelColor: .red, labelFont: .boldSystemFont(ofSize: 15), labelYOffset: 15, labelXOffset: 0)
         graphView.addReferenceLines(referenceLines: referenceLines)
         graphView.addPlot(plot: blueLinePlot)
         graphView.addPlot(plot: blueDotPlot)
