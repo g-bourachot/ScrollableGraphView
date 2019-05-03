@@ -20,7 +20,7 @@ internal class PointLabelsDrawingView : UIView {
     //MARK: - Variables
     var graphViewDrawingDelegate: ScrollableGraphViewDrawingDelegate! = nil
     var settings : PointLabelsDrawingSettings = PointLabelsDrawingSettings.init()
-    private var labels = [UILabel]()
+    private var pointDictionary = [Int:(CGPoint,Double)]()
     private var topMargin: CGFloat = 10
     private var bottomMargin: CGFloat = 10
     
@@ -36,7 +36,7 @@ internal class PointLabelsDrawingView : UIView {
     }
     
     //MARK: - Public functions
-    func setPoints(for values:[Double]){
+    func setPoints(for values:[Int:Double]){
         self.addPointLabels(for:values)
     }
     
@@ -57,17 +57,21 @@ internal class PointLabelsDrawingView : UIView {
         return (text as NSString).size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font):self.settings.labelFont]))
     }
     
-    private func addPointLabels(for values:[Double]){
-        var index = -1
-        for value in values {
-            index = index + 1
-            let position = graphViewDrawingDelegate.calculatePosition(atIndex: index, value: value)
-            let leftLabel = createLabel(at: position, withText: String(value))
+    private func addPointLabels(for values:[Int:Double]){
+        for (key,value) in values {
+            let position = graphViewDrawingDelegate.calculatePosition(atIndex: key, value: value)
+            if let existingPosition = self.pointDictionary[key], existingPosition.0 == position {
+                continue
+            } else {
+                self.pointDictionary[key] = (position, value)
+            }
+        }
+        self.subviews.forEach({ $0.removeFromSuperview()})
+        for point in self.pointDictionary {
+            let leftLabel = createLabel(at: point.value.0, withText: String(point.value.1))
             self.addSubview(leftLabel)
         }
     }
-    
-    
 }
 
 // Helper function inserted by Swift 4.2 migrator.

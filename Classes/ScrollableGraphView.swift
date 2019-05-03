@@ -93,7 +93,7 @@ import UIKit
     // Reference Lines
     private var referenceLineView: ReferenceLineDrawingView?
     private var pointLabelsDrawingView: PointLabelsDrawingView?
-    private var dataForPoints: [Double] = [] {
+    private var dataForPoints: [Int:Double] = [:] {
         didSet {
             self.refreshPointLabels()
         }
@@ -519,7 +519,7 @@ import UIKit
         #endif
         
         plot.createPlotPoints(numberOfPoints: dataSource!.numberOfPoints(), range: range) // TODO: removed forced unwrap
-        self.dataForPoints = getData(forPlot: plot, andActiveInterval: activePointsInterval)
+        self.dataForPoints = getDataDictionary(forPlot: plot, andActiveInterval: activePointsInterval)
         // If we are not animating on startup then just set all the plot positions to their respective values
         if(!shouldAnimateOnStartup) {
             let dataForInitialPoints = getData(forPlot: plot, andActiveInterval: activePointsInterval)
@@ -694,6 +694,18 @@ import UIKit
         return dataForInterval
     }
     
+    private func getDataDictionary(forPlot plot: Plot, andActiveInterval activeInterval: CountableRange<Int>) -> [Int:Double] {
+        
+        var dataForInterval = [Int:Double]()
+        
+        for i in activeInterval.startIndex ..< activeInterval.endIndex {
+            let dataForIndexI = dataSource?.value(forPlot: plot, atIndex: i) ?? 0
+            dataForInterval[i] = dataForIndexI
+        }
+        
+        return dataForInterval
+    }
+    
     private func getData(forPlot plot: Plot, andNewlyActivatedPoints activatedPoints: [Int]) -> [Double] {
         
         var dataForActivatedPoints = [Double]()
@@ -701,6 +713,18 @@ import UIKit
         for activatedPoint in activatedPoints {
             let dataForActivatedPoint = dataSource?.value(forPlot: plot, atIndex: activatedPoint) ?? 0
             dataForActivatedPoints.append(dataForActivatedPoint)
+        }
+        
+        return dataForActivatedPoints
+    }
+    
+    private func getDataDictionary(forPlot plot: Plot, andNewlyActivatedPoints activatedPoints: [Int]) -> [Int:Double] {
+        
+        var dataForActivatedPoints = [Int:Double]()
+        
+        for activatedPoint in activatedPoints {
+            let dataForActivatedPoint = dataSource?.value(forPlot: plot, atIndex: activatedPoint) ?? 0
+            dataForActivatedPoints[activatedPoint] = dataForActivatedPoint
         }
         
         return dataForActivatedPoints
@@ -720,7 +744,7 @@ import UIKit
         if(!isInitialSetup) {
             for plot in plots {
                 let newData = getData(forPlot: plot, andNewlyActivatedPoints: activatedPoints)
-                self.dataForPoints = newData
+                self.dataForPoints = getDataDictionary(forPlot: plot, andNewlyActivatedPoints: activatedPoints)
                 plot.setPlotPointPositions(forNewlyActivatedPoints: activatedPoints, withData: newData)
             }
         }
@@ -746,6 +770,7 @@ import UIKit
             // Otherwise we should simple just move the data to their positions.
             for plot in plots {
                 let newData = getData(forPlot: plot, andActiveInterval: activePointsInterval)
+                self.dataForPoints = getDataDictionary(forPlot: plot, andActiveInterval: activePointsInterval)
                 plot.setPlotPointPositions(forNewlyActivatedPoints: intervalForActivePoints(), withData: newData)
             }
         }
@@ -809,6 +834,7 @@ import UIKit
         
         for plot in plots {
             let dataForPointsToAnimate = getData(forPlot: plot, andActiveInterval: pointsToAnimate)
+            self.dataForPoints = getDataDictionary(forPlot: plot, andActiveInterval: pointsToAnimate)
             plot.startAnimations(forPoints: pointsToAnimate, withData: dataForPointsToAnimate, withStaggerValue: stagger)
         }
     }
