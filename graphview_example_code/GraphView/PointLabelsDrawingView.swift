@@ -68,7 +68,8 @@ internal class PointLabelsDrawingView : UIView {
         }
         self.subviews.forEach({ $0.removeFromSuperview()})
         for point in self.pointDictionary {
-            let leftLabel = createLabel(at: point.value.0, withText: String(point.value.1))
+            let cleanStringValue = point.value.1.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", point.value.1) : String(point.value.1)
+            let leftLabel = createLabel(at: point.value.0, withText: cleanStringValue)
             self.addSubview(leftLabel)
         }
     }
