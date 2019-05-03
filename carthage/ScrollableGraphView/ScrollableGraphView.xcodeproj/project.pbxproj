@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276D006B227C811700FB6140 /* PointLabelsDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276D006A227C811700FB6140 /* PointLabelsDrawingView.swift */; };
 		298BFD2B1F121BA10062F5C8 /* ScrollableGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = 298BFD291F121BA10062F5C8 /* ScrollableGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		298BFD491F121BB00062F5C8 /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BFD331F121BB00062F5C8 /* BarDrawingLayer.swift */; };
 		298BFD4A1F121BB00062F5C8 /* DotDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BFD341F121BB00062F5C8 /* DotDrawingLayer.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		276D006A227C811700FB6140 /* PointLabelsDrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLabelsDrawingView.swift; sourceTree = "<group>"; };
 		298BFD261F121BA10062F5C8 /* ScrollableGraphView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScrollableGraphView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		298BFD291F121BA10062F5C8 /* ScrollableGraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableGraphView.h; sourceTree = "<group>"; };
 		298BFD2A1F121BA10062F5C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		298BFD321F121BB00062F5C8 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				276D006A227C811700FB6140 /* PointLabelsDrawingView.swift */,
 				298BFD331F121BB00062F5C8 /* BarDrawingLayer.swift */,
 				298BFD341F121BB00062F5C8 /* DotDrawingLayer.swift */,
 				298BFD351F121BB00062F5C8 /* FillDrawingLayer.swift */,
@@ -245,6 +248,7 @@
 				298BFD4A1F121BB00062F5C8 /* DotDrawingLayer.swift in Sources */,
 				298BFD521F121BB00062F5C8 /* BarPlot.swift in Sources */,
 				298BFD4B1F121BB00062F5C8 /* FillDrawingLayer.swift in Sources */,
+				276D006B227C811700FB6140 /* PointLabelsDrawingView.swift in Sources */,
 				298BFD4D1F121BB00062F5C8 /* LineDrawingLayer.swift in Sources */,
 				298BFD491F121BB00062F5C8 /* BarDrawingLayer.swift in Sources */,
 				298BFD4F1F121BB00062F5C8 /* ScrollableGraphViewDrawingLayer.swift in Sources */,

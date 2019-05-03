@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		276D0067227C416600FB6140 /* PointLabelsDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointLabelsDrawingView.swift; sourceTree = "<group>"; };
+		276D0067227C416600FB6140 /* PointLabelsDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PointLabelsDrawingView.swift; path = ../../Classes/Drawing/PointLabelsDrawingView.swift; sourceTree = "<group>"; };
 		2918399E1C72E6A400753A45 /* GraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291839A11C72E6A400753A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		291839A31C72E6A400753A45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = GraphView/ViewController.swift; sourceTree = "<group>"; };
